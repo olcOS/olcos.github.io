@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>olcOS — your own VPN over video calls | iPhone and Android</title>
+  <meta name="description" content="olcOS is a VPN and SOCKS5 proxy through a server of your own. Traffic travels inside an ordinary video call: Jitsi, SaluteJazz, VK Calls, MTS Link, Yandex Telemost. Apps for iPhone and Android; the server installs with one command.">
+  <meta name="keywords" content="olcOS, olcrtc, VPN, SOCKS5, proxy, WebRTC, self-hosted VPN, Jitsi, VK Calls, SaluteJazz, MTS Link, Telemost, VLESS, REALITY, iPhone, Android">
+  <link rel="canonical" href="https://olcos.github.io/en/">
+  <link rel="alternate" hreflang="ru" href="https://olcos.github.io/">
+  <link rel="alternate" hreflang="en" href="https://olcos.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://olcos.github.io/">
+  <link rel="icon" href="/assets/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon.png">
+  <meta name="theme-color" content="#07090f">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="olcOS">
+  <meta property="og:title" content="olcOS — your own VPN over video calls">
+  <meta property="og:description" content="Your phone. Your server. Your connection. Apps for iPhone and Android.">
+  <meta property="og:url" content="https://olcos.github.io/en/">
+  <meta property="og:image" content="https://olcos.github.io/assets/social-preview.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top wrap">
+  <a class="brand" href="/en/"><img src="/assets/icon.png" alt="">olcOS</a>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#server">Server</a>
+    <a href="https://github.com/olcOS">GitHub</a>
+    <a href="/" hreflang="ru">Русский</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Your phone.<br>Your server.<br><span>Your connection.</span></h1>
+      <p class="lead">olcOS sends your phone's traffic through a server of your own, inside an ordinary video call. The service sees a WebRTC call; you get a VPN or a SOCKS5 proxy.</p>
+      <div class="cta">
+        <a class="btn" href="https://github.com/olcOS/olcos/releases/latest">Download for iPhone<small>iOS 17+ · .ipa file</small></a>
+        <a class="btn" href="https://github.com/olcOS/olcos/releases/latest">Download for Android<small>Android 8+ · .apk file</small></a>
+      </div>
+      <p class="note">Beta. Free and open source.</p>
+    </div>
+    <div class="shots">
+      <img src="/assets/screen-whole-server.png" alt="olcOS connected to the whole server">
+      <img src="/assets/screen-speed.png" alt="olcOS speed per protocol">
+    </div>
+  </div>
+
+  <section class="wrap">
+    <h2>How it works</h2>
+    <div class="flow">
+      <div class="node">Phone with olcOS</div><div class="arrow">→</div>
+      <div class="node">Video room: Jitsi, VK, SaluteJazz, MTS Link, Telemost</div><div class="arrow">→</div>
+      <div class="node">Your server</div><div class="arrow">→</div>
+      <div class="node">Internet</div>
+    </div>
+  </section>
+
+  <section class="wrap" id="features">
+    <h2>Features</h2>
+    <div class="grid">
+      <div class="card"><h3>The whole server at once</h3><p>Several rooms bond into one channel: a large download uses all of them, and one dropping does not cut the connection.</p></div>
+      <div class="card"><h3>It does not give up</h3><p>A dead connection is noticed quickly and rejoined until you stop it. Only errors a retry cannot cure stop it.</p></div>
+      <div class="card"><h3>Manage it from the phone</h3><p>Rooms, keys, the core update and invites for family — from the app, no terminal.</p></div>
+      <div class="card"><h3>VPN or proxy</h3><p>A VPN for the whole phone, or SOCKS5 for single apps such as Telegram.</p></div>
+      <div class="card"><h3>Direct mode</h3><p>When no video call is needed: VLESS + REALITY straight to the server.</p></div>
+      <div class="card"><h3>Yours only</h3><p>No shared servers or accounts: traffic goes through a server that belongs to you.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="server">
+    <h2>Your server in one command</h2>
+    <p class="lead">Debian, Ubuntu, Fedora or CentOS with root access. At the end the script shows a QR code — scan it with olcOS and the phone becomes the server's owner.</p>
+    <pre>curl -fsSL https://raw.githubusercontent.com/olcOS/olcos/main/install.sh | sudo bash</pre>
+  </section>
+
+  <section class="wrap">
+    <h2>Source code</h2>
+    <div class="platforms">
+      <a class="card" href="https://github.com/olcOS/olcos"><h3>olcOS</h3><p>The project's home, the server installer and releases.</p></a>
+      <a class="card" href="https://github.com/olcOS/olcos-ios"><h3>olcOS for iPhone and iPad</h3><p>SwiftUI, the system VPN and widgets.</p></a>
+      <a class="card" href="https://github.com/olcOS/olcos-android"><h3>olcOS for Android</h3><p>Kotlin and Jetpack Compose.</p></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>olcOS · MIT</span>
+    <span>Use it within the law and the rules of the services your traffic travels through.</span>
+  </div>
+</footer>
+</body>
+</html>

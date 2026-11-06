@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>olcOS — свой VPN через видеозвонки | iPhone и Android</title>
+  <meta name="description" content="olcOS — VPN и SOCKS5-прокси через ваш собственный сервер. Трафик идёт внутри обычного видеозвонка: Jitsi, SaluteJazz, VK Звонки, МТС Link, Яндекс Телемост. Приложения для iPhone и Android, сервер ставится одной командой.">
+  <meta name="keywords" content="olcOS, olcrtc, VPN, SOCKS5, прокси, WebRTC, свой сервер, self-hosted VPN, Jitsi, VK Звонки, SaluteJazz, МТС Link, Телемост, VLESS, REALITY, iPhone, Android">
+  <link rel="canonical" href="https://olcos.github.io/">
+  <link rel="alternate" hreflang="ru" href="https://olcos.github.io/">
+  <link rel="alternate" hreflang="en" href="https://olcos.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://olcos.github.io/">
+  <link rel="icon" href="/assets/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon.png">
+  <meta name="theme-color" content="#07090f">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="olcOS">
+  <meta property="og:title" content="olcOS — свой VPN через видеозвонки">
+  <meta property="og:description" content="Ваш телефон. Ваш сервер. Ваше подключение. Приложения для iPhone и Android.">
+  <meta property="og:url" content="https://olcos.github.io/">
+  <meta property="og:image" content="https://olcos.github.io/assets/social-preview.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "olcOS",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "iOS 17, Android 8",
+    "description": "VPN и SOCKS5-прокси через собственный сервер поверх WebRTC-видеозвонков.",
+    "url": "https://olcos.github.io/",
+    "downloadUrl": "https://github.com/olcOS/olcos/releases/latest",
+    "image": "https://olcos.github.io/assets/icon.png",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "sameAs": ["https://github.com/olcOS"]
+  }
+  </script>
+</head>
+<body>
+<header class="top wrap">
+  <a class="brand" href="/"><img src="/assets/icon.png" alt="">olcOS</a>
+  <nav>
+    <a href="#features">Возможности</a>
+    <a href="#server">Сервер</a>
+    <a href="https://github.com/olcOS">GitHub</a>
+    <a href="/en/" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Ваш телефон.<br>Ваш сервер.<br><span>Ваше подключение.</span></h1>
+      <p class="lead">olcOS пускает трафик телефона через ваш собственный сервер внутри обычного видеозвонка. Для сервиса это WebRTC-звонок, для вас — VPN или SOCKS5-прокси.</p>
+      <div class="cta">
+        <a class="btn" href="https://github.com/olcOS/olcos/releases/latest">Скачать для iPhone<small>iOS 17+ · файл .ipa</small></a>
+        <a class="btn" href="https://github.com/olcOS/olcos/releases/latest">Скачать для Android<small>Android 8+ · файл .apk</small></a>
+      </div>
+      <p class="note">Бета. Бесплатно, с открытым исходным кодом.</p>
+    </div>
+    <div class="shots">
+      <img src="/assets/screen-whole-server.png" alt="olcOS: подключено ко всему серверу">
+      <img src="/assets/screen-speed.png" alt="olcOS: скорость по протоколам">
+    </div>
+  </div>
+
+  <section class="wrap">
+    <h2>Как это работает</h2>
+    <div class="flow">
+      <div class="node">Телефон с olcOS</div><div class="arrow">→</div>
+      <div class="node">Видеокомната: Jitsi, VK, SaluteJazz, МТС Link, Телемост</div><div class="arrow">→</div>
+      <div class="node">Ваш сервер</div><div class="arrow">→</div>
+      <div class="node">Интернет</div>
+    </div>
+  </section>
+
+  <section class="wrap" id="features">
+    <h2>Возможности</h2>
+    <div class="grid">
+      <div class="card"><h3>Весь сервер сразу</h3><p>Несколько комнат склеиваются в один канал: большая загрузка идёт по всем, обрыв одной не рвёт соединение.</p></div>
+      <div class="card"><h3>Не сдаётся</h3><p>Обрыв замечается быстро, переподключение идёт, пока вы его не остановите. Остановка только на неустранимых ошибках.</p></div>
+      <div class="card"><h3>Сервер с телефона</h3><p>Комнаты, ключи, обновление ядра и приглашения для близких — из приложения, без терминала.</p></div>
+      <div class="card"><h3>VPN или прокси</h3><p>VPN на весь телефон или SOCKS5 для отдельных приложений, например Telegram.</p></div>
+      <div class="card"><h3>Прямой режим</h3><p>Если видеозвонок не нужен: VLESS + REALITY напрямую к серверу.</p></div>
+      <div class="card"><h3>Только ваше</h3><p>Никаких общих серверов и аккаунтов: трафик идёт через сервер, который принадлежит вам.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="server">
+    <h2>Свой сервер за одну команду</h2>
+    <p class="lead">Debian, Ubuntu, Fedora или CentOS с root-доступом. В конце скрипт покажет QR-код — отсканируйте его в olcOS, и телефон станет владельцем сервера.</p>
+    <pre>curl -fsSL https://raw.githubusercontent.com/olcOS/olcos/main/install.sh | sudo bash</pre>
+  </section>
+
+  <section class="wrap">
+    <h2>Исходный код</h2>
+    <div class="platforms">
+      <a class="card" href="https://github.com/olcOS/olcos"><h3>olcOS</h3><p>Главная страница проекта, установщик сервера и релизы.</p></a>
+      <a class="card" href="https://github.com/olcOS/olcos-ios"><h3>olcOS для iPhone и iPad</h3><p>SwiftUI, системный VPN и виджеты.</p></a>
+      <a class="card" href="https://github.com/olcOS/olcos-android"><h3>olcOS для Android</h3><p>Kotlin и Jetpack Compose.</p></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>olcOS · MIT</span>
+    <span>Используйте в рамках закона и правил сервисов, через которые идёт трафик.</span>
+  </div>
+</footer>
+</body>
+</html>
