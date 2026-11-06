@@ -2,114 +2,500 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>olcOS — свой VPN через видеозвонки | iPhone и Android</title>
-  <meta name="description" content="olcOS — VPN и SOCKS5-прокси через ваш собственный сервер. Трафик идёт внутри обычного видеозвонка: Jitsi, SaluteJazz, VK Звонки, МТС Link, Яндекс Телемост. Приложения для iPhone и Android, сервер ставится одной командой.">
-  <meta name="keywords" content="olcOS, olcrtc, VPN, SOCKS5, прокси, WebRTC, свой сервер, self-hosted VPN, Jitsi, VK Звонки, SaluteJazz, МТС Link, Телемост, VLESS, REALITY, iPhone, Android">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>olcOS — свой VPN через видеозвонки для iPhone и Android</title>
+  <meta name="description" content="olcOS передаёт трафик телефона через ваш собственный сервер внутри видеозвонка в Телемосте, VK Звонках, SaluteJazz, Jitsi или МТС Link. VPN и SOCKS5-прокси, бесплатно, открытый код.">
   <link rel="canonical" href="https://olcos.github.io/">
   <link rel="alternate" hreflang="ru" href="https://olcos.github.io/">
   <link rel="alternate" hreflang="en" href="https://olcos.github.io/en/">
   <link rel="alternate" hreflang="x-default" href="https://olcos.github.io/">
-  <link rel="icon" href="/assets/icon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/icon.png">
-  <meta name="theme-color" content="#07090f">
+  <meta name="theme-color" content="#0b0c0f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="olcOS">
-  <meta property="og:title" content="olcOS — свой VPN через видеозвонки">
-  <meta property="og:description" content="Ваш телефон. Ваш сервер. Ваше подключение. Приложения для iPhone и Android.">
-  <meta property="og:url" content="https://olcos.github.io/">
-  <meta property="og:image" content="https://olcos.github.io/assets/social-preview.png">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="olcOS — свой VPN через видеозвонки">
+  <meta property="og:description" content="Трафик телефона идёт через ваш сервер внутри обычного видеозвонка. Для iPhone, iPad и Android. Бесплатно, открытый код.">
+  <meta property="og:url" content="https://olcos.github.io/">
+  <meta property="og:image" content="https://olcos.github.io/assets/og-ru.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="olcOS: приложение на iPhone, статус «Подключено»">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/style.css">
+  <meta name="twitter:title" content="olcOS — свой VPN через видеозвонки">
+  <meta name="twitter:description" content="Трафик телефона идёт через ваш сервер внутри обычного видеозвонка. Для iPhone, iPad и Android.">
+  <meta name="twitter:image" content="https://olcos.github.io/assets/og-ru.png">
+  <link rel="preload" href="assets/fonts/onest-cyr.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/onest-lat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "olcOS",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "iOS 17, Android 8",
-    "description": "VPN и SOCKS5-прокси через собственный сервер поверх WebRTC-видеозвонков.",
-    "url": "https://olcos.github.io/",
-    "downloadUrl": "https://github.com/olcOS/olcos/releases/latest",
-    "image": "https://olcos.github.io/assets/icon.png",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "sameAs": ["https://github.com/olcOS"]
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "olcOS",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "iOS 17, iPadOS 17, Android 8",
+        "softwareVersion": "3.0.3-beta",
+        "description": "VPN и SOCKS5-прокси через собственный сервер внутри видеозвонков: Яндекс Телемост, VK Звонки, SaluteJazz, Jitsi, МТС Link.",
+        "url": "https://olcos.github.io/",
+        "downloadUrl": "https://github.com/olcOS/olcos/releases/latest",
+        "image": "https://olcos.github.io/assets/icon-512.png",
+        "screenshot": "https://olcos.github.io/assets/img/screens/whole-server-hero-connected.webp",
+        "license": "https://opensource.org/licenses/MIT",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+        "author": { "@id": "https://olcos.github.io/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://olcos.github.io/#org",
+        "name": "olcOS",
+        "url": "https://olcos.github.io/",
+        "logo": "https://olcos.github.io/assets/icon-512.png",
+        "sameAs": ["https://github.com/olcOS"]
+      }
+    ]
   }
   </script>
 </head>
 <body>
-<header class="top wrap">
-  <a class="brand" href="/"><img src="/assets/icon.png" alt="">olcOS</a>
-  <nav>
-    <a href="#features">Возможности</a>
-    <a href="#server">Сервер</a>
-    <a href="https://github.com/olcOS">GitHub</a>
-    <a href="/en/" hreflang="en">English</a>
-  </nav>
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="olcOS, на главную">
+      <img src="assets/favicon-64.png" width="32" height="32" alt="">
+      <span>olcOS</span>
+    </a>
+    <nav class="nav-links" aria-label="Разделы">
+      <a href="#how">Как это работает</a>
+      <a href="#features">Возможности</a>
+      <a href="#server">Сервер</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <div class="nav-end">
+      <a class="lang" href="en/" hreflang="en" lang="en" aria-label="English version">EN</a>
+      <a class="nav-icon" href="https://github.com/olcOS" aria-label="olcOS на GitHub">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+      <a class="btn btn-primary btn-sm" href="#download">Скачать</a>
+    </div>
+  </div>
 </header>
 
-<main>
-  <div class="wrap hero">
-    <div>
-      <h1>Ваш телефон.<br>Ваш сервер.<br><span>Ваше подключение.</span></h1>
-      <p class="lead">olcOS пускает трафик телефона через ваш собственный сервер внутри обычного видеозвонка. Для сервиса это WebRTC-звонок, для вас — VPN или SOCKS5-прокси.</p>
-      <div class="cta">
-        <a class="btn" href="https://github.com/olcOS/olcos/releases/latest">Скачать для iPhone<small>iOS 17+ · файл .ipa</small></a>
-        <a class="btn" href="https://github.com/olcOS/olcos/releases/latest">Скачать для Android<small>Android 8+ · файл .apk</small></a>
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span>Бета 3.0 · iPhone, iPad и Android</p>
+        <h1 class="h1" id="hero-title" data-reveal style="--d:1">
+          <span class="line">Свой VPN</span>
+          <span class="line"><em>внутри видеозвонка</em></span>
+        </h1>
+        <p class="lead" data-reveal style="--d:2">olcOS заходит в звонок в Телемосте, VK Звонках, SaluteJazz, Jitsi или МТС Link и передаёт трафик телефона через ваш собственный сервер. Для сети это обычная видеосвязь.</p>
+        <div class="cta" data-reveal style="--d:3" data-cta>
+          <a class="btn btn-primary" href="https://github.com/olcOS/olcos/releases/latest" data-platform="ios">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
+            <span class="t">Скачать для iPhone<small>iOS 17+ · файл .ipa</small></span>
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/olcOS/olcos/releases/latest" data-platform="android">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16.5V12a7 7 0 0 1 14 0v4.5z"/><path d="M8 5.5 6.5 3.5M16 5.5l1.5-2"/><circle cx="9.5" cy="11.5" r=".6" fill="currentColor"/><circle cx="14.5" cy="11.5" r=".6" fill="currentColor"/><path d="M7.5 16.5v3M16.5 16.5v3"/></svg>
+            <span class="t">Скачать для Android<small>Android 8+ · файл .apk</small></span>
+          </a>
+        </div>
+        <p class="hero-more" data-reveal style="--d:4">
+          <a class="link" href="#how">Как это работает <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </p>
+        <ul class="facts" data-reveal style="--d:5">
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>Бесплатно, код открыт (MIT)</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>Сервер ваш, а не общий</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>Ставится с телефона</li>
+        </ul>
       </div>
-      <p class="note">Бета. Бесплатно, с открытым исходным кодом.</p>
+
+      <div class="device" id="hero-device" data-reveal style="--d:2">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="phone">
+          <div class="screen">
+            <img class="shot is-active" data-state="off" src="assets/img/screens/hero-idle.webp" width="660" height="1435" alt="Главный экран olcOS: «Отключено», каменная стена, кнопка «Подключить»">
+            <img class="shot" data-state="on" src="assets/img/screens/whole-server-hero-connected.webp" width="660" height="1435" alt="Главный экран olcOS: «Подключено», Амстердам, сигнал проходит, подключение «Весь сервер»" loading="eager">
+            <div class="sbar" aria-hidden="true">
+              <span>9:41</span>
+              <svg viewBox="0 0 60 14" fill="#fff"><rect x="0" y="9" width="3" height="5" rx="1"/><rect x="5" y="6.5" width="3" height="7.5" rx="1"/><rect x="10" y="4" width="3" height="10" rx="1"/><rect x="15" y="1.5" width="3" height="12.5" rx="1"/><path d="M29 4.2a9.4 9.4 0 0 1 6.6 2.7l1.2-1.2a11.1 11.1 0 0 0-15.6 0l1.2 1.2A9.4 9.4 0 0 1 29 4.2zm0 3.5a5.9 5.9 0 0 1 4.1 1.7l1.2-1.2a7.6 7.6 0 0 0-10.6 0l1.2 1.2A5.9 5.9 0 0 1 29 7.7zm0 3.5a2.4 2.4 0 0 1 1.6.7L29 13.5l-1.6-1.6a2.4 2.4 0 0 1 1.6-.7z"/><rect x="41.5" y="2" width="15" height="9.5" rx="2.6" fill="none" stroke="#fff" stroke-opacity=".5"/><rect x="43" y="3.5" width="11" height="6.5" rx="1.4"/><rect x="57.5" y="5" width="1.6" height="3.5" rx=".8" fill-opacity=".5"/></svg>
+            </div>
+            <div class="island" aria-hidden="true"></div>
+            <button class="tap" type="button" data-toggle aria-pressed="false" aria-label="Показать подключение"></button>
+          </div>
+        </div>
+        <img class="la" src="assets/img/live-activity.webp" width="680" height="243" alt="Live Activity на экране блокировки: «Подключено, весь сервер ams-1, 10.6 Мбит/с»">
+        <p class="device-note" aria-live="polite"><span class="st-off">Нажмите <b>«Подключить»</b> на экране</span><span class="st-on">Подключено · весь сервер ams-1</span></p>
+      </div>
     </div>
-    <div class="shots">
-      <img src="/assets/screen-whole-server.png" alt="olcOS: подключено ко всему серверу">
-      <img src="/assets/screen-speed.png" alt="olcOS: скорость по протоколам">
+  </section>
+
+  <!-- Carriers -->
+  <div class="marquee" aria-label="Поддерживаемые сервисы и режимы">
+    <div class="marquee-track">
+      <ul>
+        <li>Яндекс Телемост</li><li>VK Звонки</li><li>SaluteJazz</li><li>Jitsi</li><li>МТС Link</li><li>VLESS + REALITY</li><li>VPN на весь телефон</li><li>SOCKS5-прокси</li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>Яндекс Телемост</li><li>VK Звонки</li><li>SaluteJazz</li><li>Jitsi</li><li>МТС Link</li><li>VLESS + REALITY</li><li>VPN на весь телефон</li><li>SOCKS5-прокси</li>
+      </ul>
     </div>
   </div>
 
-  <section class="wrap">
-    <h2>Как это работает</h2>
-    <div class="flow">
-      <div class="node">Телефон с olcOS</div><div class="arrow">→</div>
-      <div class="node">Видеокомната: Jitsi, VK, SaluteJazz, МТС Link, Телемост</div><div class="arrow">→</div>
-      <div class="node">Ваш сервер</div><div class="arrow">→</div>
-      <div class="node">Интернет</div>
+  <!-- How it works: pinned scene -->
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="how-track" data-how>
+      <div class="how-sticky">
+        <canvas class="how-canvas" aria-hidden="true"></canvas>
+        <div class="wrap how-copy">
+          <p class="eyebrow">Как это работает</p>
+          <h2 class="h2" id="how-title">Звонок, который везёт <em>ваш трафик</em></h2>
+          <ol class="how-steps">
+            <li class="how-step is-active">
+              <span class="num">01</span>
+              <h3>Телефон заходит в комнату</h3>
+              <p>olcOS подключается к видеозвонку как обычный участник. Ваш сервер ждёт в той же комнате.</p>
+            </li>
+            <li class="how-step">
+              <span class="num">02</span>
+              <h3>Данные едут внутри звонка</h3>
+              <p>Трафик упакован в видеокадры или в канал данных звонка. Провайдер видит соединение с сервисом звонков, а не с вашим сервером.</p>
+            </li>
+            <li class="how-step">
+              <span class="num">03</span>
+              <h3>Сервер выпускает его в интернет</h3>
+              <p>Сервер забирает трафик из комнаты и отправляет дальше, ответы идут тем же путём. Если комната закрылась, olcOS переподключится или возьмёт другую.</p>
+            </li>
+          </ol>
+          <div class="how-progress" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="wrap" id="features">
-    <h2>Возможности</h2>
-    <div class="grid">
-      <div class="card"><h3>Весь сервер сразу</h3><p>Несколько комнат склеиваются в один канал: большая загрузка идёт по всем, обрыв одной не рвёт соединение.</p></div>
-      <div class="card"><h3>Не сдаётся</h3><p>Обрыв замечается быстро, переподключение идёт, пока вы его не остановите. Остановка только на неустранимых ошибках.</p></div>
-      <div class="card"><h3>Сервер с телефона</h3><p>Комнаты, ключи, обновление ядра и приглашения для близких — из приложения, без терминала.</p></div>
-      <div class="card"><h3>VPN или прокси</h3><p>VPN на весь телефон или SOCKS5 для отдельных приложений, например Telegram.</p></div>
-      <div class="card"><h3>Прямой режим</h3><p>Если видеозвонок не нужен: VLESS + REALITY напрямую к серверу.</p></div>
-      <div class="card"><h3>Только ваше</h3><p>Никаких общих серверов и аккаунтов: трафик идёт через сервер, который принадлежит вам.</p></div>
+  <div class="rule" aria-hidden="true"></div>
+
+  <!-- Features: sticky phone -->
+  <section class="section features" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow" data-reveal>Возможности</p>
+        <h2 class="h2" id="features-title" data-reveal style="--d:1">Всё настраивается <em>в телефоне</em></h2>
+        <p class="lead" data-reveal style="--d:2">Без терминала и конфигов. Сервер, комнаты, ключи и доступ для близких живут в приложении.</p>
+      </header>
+
+      <div class="feat" data-feat>
+        <div class="feat-stage" aria-hidden="true">
+          <div class="feat-sticky">
+            <div class="glow"></div>
+            <div class="phone">
+              <div class="screen">
+                <img class="shot is-active" src="assets/img/screens/welcome.webp" width="660" height="1435" alt="" loading="lazy">
+                <img class="shot" src="assets/img/screens/wizard-3-protocols.webp" width="660" height="1435" alt="" loading="lazy">
+                <img class="shot" src="assets/img/screens/whole-server-card.webp" width="660" height="1435" alt="" loading="lazy">
+                <img class="shot" src="assets/img/screens/diagnostics-protocols.webp" width="660" height="1435" alt="" loading="lazy">
+                <img class="shot" src="assets/img/screens/devices-usage.webp" width="660" height="1435" alt="" loading="lazy">
+                <img class="shot" src="assets/img/screens/settings.webp" width="660" height="1435" alt="" loading="lazy">
+                <div class="island"></div>
+              </div>
+            </div>
+            <p class="feat-count"><b data-feat-now>01</b> / 06</p>
+          </div>
+        </div>
+
+        <ol class="feat-list">
+          <li class="feat-item is-active">
+            <figure class="feat-shot-m phone"><div class="screen"><img src="assets/img/screens/welcome.webp" width="660" height="1435" alt="Экран «С чего начнём?»: ссылка, свой сервер или готовая подборка" loading="lazy"></div></figure>
+            <span class="num">01</span>
+            <h3>Начните с того, что есть</h3>
+            <p>Прислали ссылку, QR-код или подписку — вставьте. Есть VPS — дайте адрес и пароль. Нет ничего — в приложении есть подборка бесплатных серверов.</p>
+          </li>
+          <li class="feat-item">
+            <figure class="feat-shot-m phone"><div class="screen"><img src="assets/img/screens/wizard-3-protocols.webp" width="660" height="1435" alt="Выбор сервисов: Яндекс Телемост, VK Звонки и другие" loading="lazy"></div></figure>
+            <span class="num">02</span>
+            <h3>Пять сервисов звонков на выбор</h3>
+            <p>Телемост, VK Звонки, SaluteJazz, Jitsi и МТС Link. У каждого своё подключение. Если звонок не нужен, есть прямой режим VLESS + REALITY.</p>
+            <div class="tags"><span class="tag"><i></i>VP8</span><span class="tag"><i></i>DataChannel</span><span class="tag"><i></i>Xray</span></div>
+          </li>
+          <li class="feat-item">
+            <figure class="feat-shot-m phone"><div class="screen"><img src="assets/img/screens/whole-server-card.webp" width="660" height="1435" alt="Карточка сервера: «Весь сервер», комнаты и их состояние" loading="lazy"></div></figure>
+            <span class="num">03</span>
+            <h3>Весь сервер одним подключением</h3>
+            <p>Несколько комнат склеиваются в один канал. Тяжёлая загрузка идёт по всем сразу, а если одна комната отвалится, соединение не рвётся.</p>
+          </li>
+          <li class="feat-item">
+            <figure class="feat-shot-m phone"><div class="screen"><img src="assets/img/screens/diagnostics-protocols.webp" width="660" height="1435" alt="Скорость каждой комнаты: Jitsi, SaluteJazz, Яндекс Телемост" loading="lazy"></div></figure>
+            <span class="num">04</span>
+            <h3>Видно, какая комната быстрее</h3>
+            <p>olcOS замеряет каждую комнату отдельно и все вместе. Самая быстрая получает отметку, а молчащая — честное «не отвечает».</p>
+          </li>
+          <li class="feat-item">
+            <figure class="feat-shot-m phone"><div class="screen"><img src="assets/img/screens/devices-usage.webp" width="660" height="1435" alt="Экран «Устройства»: приглашения для iPad, телефона и ноутбука" loading="lazy"></div></figure>
+            <span class="num">05</span>
+            <h3>Подключение для близких</h3>
+            <p>Отдайте сервер другому телефону или планшету одной ссылкой. Новые комнаты и ключи он получит сам, а видно, кто когда подключался и сколько скачал.</p>
+          </li>
+          <li class="feat-item">
+            <figure class="feat-shot-m phone"><div class="screen"><img src="assets/img/screens/settings.webp" width="660" height="1435" alt="Настройки: режимы «Авто», VPN и «Прокси»" loading="lazy"></div></figure>
+            <span class="num">06</span>
+            <h3>VPN или прокси</h3>
+            <p>VPN на весь телефон или SOCKS5 для отдельных приложений, например Telegram. В режиме «Авто» olcOS выберет сам, что разрешает система.</p>
+          </li>
+        </ol>
+        <p class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>Листайте</p>
+      </div>
     </div>
   </section>
 
-  <section class="wrap" id="server">
-    <h2>Свой сервер за одну команду</h2>
-    <p class="lead">Debian, Ubuntu, Fedora или CentOS с root-доступом. В конце скрипт покажет QR-код — отсканируйте его в olcOS, и телефон станет владельцем сервера.</p>
-    <pre>curl -fsSL https://raw.githubusercontent.com/olcOS/olcos/main/install.sh | sudo bash</pre>
+  <!-- Server -->
+  <section class="section server" id="server" aria-labelledby="server-title">
+    <div class="wrap server-grid">
+      <div>
+        <header class="sec-head">
+          <p class="eyebrow" data-reveal>Сервер</p>
+          <h2 class="h2" id="server-title" data-reveal style="--d:1">Свой сервер <em>за одну команду</em></h2>
+          <p class="lead" data-reveal style="--d:2">Подойдёт любой VPS на Linux с root-доступом и 1 ГБ памяти. Терминал можно вообще не открывать: укажите в приложении адрес, логин и пароль, и olcOS всё поставит сам за <span class="nw">5–15 минут</span>.</p>
+        </header>
+        <div class="term" data-reveal style="--d:3">
+          <div class="term-bar">
+            <span class="d" aria-hidden="true"></span><span class="d" aria-hidden="true"></span><span class="d" aria-hidden="true"></span>
+            <span class="title">root@vps</span>
+            <button class="copy" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/olcOS/olcos/main/install.sh | sudo bash">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.8"/><path d="M10.5 5.5V4a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 4v5A1.5 1.5 0 0 0 4 10.5h1.5"/></svg>
+              <span data-copy-label>Скопировать</span>
+            </button>
+          </div>
+          <pre><span class="p" aria-hidden="true">$ </span><code data-type>curl -fsSL https://raw.githubusercontent.com/olcOS/olcos/main/install.sh |
+  sudo bash</code></pre>
+        </div>
+        <ol class="steps3">
+          <li class="step" data-reveal style="--d:1">
+            <span class="num">01</span>
+            <h3>Запустите команду</h3>
+            <p>Debian, Ubuntu, Fedora или CentOS. Скрипт поставит всё нужное сам.</p>
+          </li>
+          <li class="step" data-reveal style="--d:2">
+            <span class="num">02</span>
+            <h3>Отсканируйте <span class="nw">QR-код</span></h3>
+            <p>Он появится в конце. Телефон, который его отсканирует, станет владельцем сервера.</p>
+          </li>
+          <li class="step" data-reveal style="--d:3">
+            <span class="num">03</span>
+            <h3>Проверьте порты</h3>
+            <p>Если у хостинга свой файрвол, разрешите входящие подключения к агенту сервера и раздаче приглашений.</p>
+          </li>
+        </ol>
+      </div>
+      <figure class="server-device" data-reveal style="--d:2">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="phone">
+          <div class="screen">
+            <img src="assets/img/screens/wizard-1-access.webp" width="660" height="1435" alt="Мастер установки сервера, шаг 1 из 5: адрес сервера, порт, логин и пароль" loading="lazy">
+            <div class="island" aria-hidden="true"></div>
+          </div>
+        </div>
+        <figcaption>Или прямо из приложения: адрес, логин, пароль. Пять шагов, и сервер готов.</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="wrap">
-    <h2>Исходный код</h2>
-    <div class="platforms">
-      <a class="card" href="https://github.com/olcOS/olcos"><h3>olcOS</h3><p>Главная страница проекта, установщик сервера и релизы.</p></a>
-      <a class="card" href="https://github.com/olcOS/olcos-ios"><h3>olcOS для iPhone и iPad</h3><p>SwiftUI, системный VPN и виджеты.</p></a>
-      <a class="card" href="https://github.com/olcOS/olcos-android"><h3>olcOS для Android</h3><p>Kotlin и Jetpack Compose.</p></a>
+  <!-- Download -->
+  <section class="section" id="download" aria-labelledby="download-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow" data-reveal>Скачать</p>
+        <h2 class="h2" id="download-title" data-reveal style="--d:1">Бесплатно для iPhone, iPad <em>и Android</em></h2>
+        <p class="lead" data-reveal style="--d:2">Файлы лежат в релизах на GitHub. Там же исходный код каждого приложения.</p>
+      </header>
+      <div class="plat">
+        <article class="card" data-reveal style="--d:1">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg></span>
+          <h3>iPhone и iPad</h3>
+          <p class="req">iOS и iPadOS 17+</p>
+          <p>Файл .ipa ставится через Sideloadly, AltStore или SideStore. С бесплатным Apple ID iOS разрешает только режим прокси. Для VPN на весь телефон нужен платный аккаунт разработчика.</p>
+          <div class="acts">
+            <a class="btn btn-primary" href="https://github.com/olcOS/olcos/releases/latest">Скачать .ipa</a>
+            <a class="link" href="https://github.com/olcOS/olcos-ios">Исходный код <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+        <article class="card" data-reveal style="--d:2">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16.5V12a7 7 0 0 1 14 0v4.5z"/><path d="M8 5.5 6.5 3.5M16 5.5l1.5-2"/><circle cx="9.5" cy="11.5" r=".6" fill="currentColor"/><circle cx="14.5" cy="11.5" r=".6" fill="currentColor"/><path d="M7.5 16.5v3M16.5 16.5v3"/></svg></span>
+          <h3>Android</h3>
+          <p class="req">Android 8.0+</p>
+          <p>Скачайте .apk, разрешите установку из этого источника и откройте файл. Разрешение на VPN система спросит один раз.</p>
+          <div class="acts">
+            <a class="btn btn-primary" href="https://github.com/olcOS/olcos/releases/latest">Скачать .apk</a>
+            <a class="link" href="https://github.com/olcOS/olcos-android">Исходный код <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+        <article class="card" data-reveal style="--d:3">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="7" rx="2"/><rect x="3.5" y="13" width="17" height="7" rx="2"/><path d="M7.5 7.5h.01M7.5 16.5h.01M11 7.5h5M11 16.5h5"/></svg></span>
+          <h3>Сервер</h3>
+          <p class="req">Linux · root · 1 ГБ памяти</p>
+          <p>Debian, Ubuntu, Fedora или CentOS. Ставится одной командой или прямо из приложения по SSH.</p>
+          <div class="acts">
+            <a class="btn btn-secondary" href="#server">Команда установки</a>
+            <a class="link" href="https://github.com/olcOS/olcos/blob/main/install.sh">install.sh <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+      </div>
+      <p class="plat-note" data-reveal>Контрольные суммы SHA-256 указаны в описании <a href="https://github.com/olcOS/olcos/releases/latest">релиза</a>. На Android обновления можно получать автоматически через <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22io.olcos.app%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FolcOS%2Folcos%22%2C%22author%22%3A%22olcOS%22%2C%22name%22%3A%22olcOS%22%7D">Obtainium</a>. Сборка из исходников описана в <a href="https://github.com/olcOS/olcos-ios/blob/main/docs/build.md">документации</a>.</p>
+    </div>
+  </section>
+
+  <div class="rule" aria-hidden="true"></div>
+
+  <!-- Speed & limits -->
+  <section class="section" id="speed" aria-labelledby="speed-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow" data-reveal>Скорость и ограничения</p>
+        <h2 class="h2" id="speed-title" data-reveal style="--d:1">Скорость задаёт <em>звонок</em></h2>
+        <p class="lead" data-reveal style="--d:2">Потолок определяет сервис звонков, а не ваш сервер. Ниже замеры релизного стенда ядра olcrtc. У вас цифры будут другими: всё зависит от сети и нагрузки на сервис.</p>
+      </header>
+      <div class="speed-grid">
+        <div>
+          <div class="stats">
+            <div class="stat" data-reveal style="--d:1"><b>13–19<small>Мбит/с</small></b><span>VK Звонки, в обе стороны</span><div class="bar"><i style="--w:88%"></i></div></div>
+            <div class="stat" data-reveal style="--d:2"><b>15<small>Мбит/с</small></b><span>МТС Link, загрузка</span><div class="bar"><i style="--w:79%"></i></div></div>
+            <div class="stat" data-reveal style="--d:3"><b>2,8<small>Мбит/с</small></b><span>SaluteJazz, загрузка</span><div class="bar"><i style="--w:16%"></i></div></div>
+          </div>
+          <p class="src-note" data-reveal>Источник: <a href="https://github.com/ghostlane-project/olcrtc/blob/0955ba7f2041d1480524292c4af4135a192fe267/docs/settings.ru.md">настройки транспортов</a> и <a href="https://github.com/ghostlane-project/olcrtc/blob/0955ba7f2041d1480524292c4af4135a192fe267/docs/gate.ru.md">описание стенда</a> olcrtc.</p>
+        </div>
+        <ul class="limits">
+          <li class="limit" data-reveal style="--d:1">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6.5v4.5M10 14h.01"/><circle cx="10" cy="10" r="7.5"/></svg></span>
+            <div><h3>VPN передаёт TCP по IPv4</h3><p>Приложения, которым нужен UDP или IPv6, могут не работать: например, звонки в некоторых мессенджерах и онлайн-игры.</p></div>
+          </li>
+          <li class="limit" data-reveal style="--d:2">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6.5v4.5M10 14h.01"/><circle cx="10" cy="10" r="7.5"/></svg></span>
+            <div><h3>Сервис может закрыть комнату</h3><p>Или ограничить гостей. Поэтому в olcOS несколько сервисов, склейка комнат и автоматическое переподключение.</p></div>
+          </li>
+          <li class="limit" data-reveal style="--d:3">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6.5v4.5M10 14h.01"/><circle cx="10" cy="10" r="7.5"/></svg></span>
+            <div><h3>Это бета</h3><p>Интерфейс и совместимость ещё меняются. Если что-то сломалось, напишите в <a class="link" href="https://github.com/olcOS/olcos/issues">issues</a>.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <header class="sec-head faq-head">
+        <p class="eyebrow" data-reveal>Вопросы</p>
+        <h2 class="h2" id="faq-title" data-reveal style="--d:1">Коротко <em>о главном</em></h2>
+        <p class="lead" data-reveal style="--d:2">Не нашли ответ? Спросите в <a class="link" href="https://github.com/olcOS/olcos/issues">issues на GitHub</a>.</p>
+      </header>
+      <div class="faq-list" data-reveal style="--d:1">
+        <details class="qa">
+          <summary>Сколько это стоит?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Приложение бесплатное, код открыт под лицензией MIT. Платить придётся только за сервер, если вы берёте свой VPS у хостинга.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Обязательно нужен свой сервер?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Нет. Можно вставить ссылку, QR-код или подписку, которую вам дали, или выбрать сервер из подборки в приложении. Но olcOS придуман ради своего сервера: тогда трафик не идёт через чужие руки.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Почему на iPhone работает только прокси?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Так устроена iOS: приложение, подписанное бесплатным Apple ID, не может включать VPN. Прокси SOCKS5 при этом работает в приложениях, где его можно указать, например в Telegram. VPN на весь телефон заработает, если подписать приложение платным аккаунтом разработчика.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Какие сервисы звонков поддерживаются?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Яндекс Телемост, VK Звонки, SaluteJazz, Jitsi и МТС Link. Для Телемоста нужен аккаунт Яндекса, для VK Звонков — вход в VK или ссылка на звонок, для МТС Link — постоянная встреча из вашего аккаунта. Для SaluteJazz и Jitsi аккаунт не нужен. Есть и режим без звонка: VLESS + REALITY напрямую к серверу.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Что не будет работать через VPN?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>То, что ходит только по UDP или IPv6. Сайты, мессенджеры в режиме переписки, почта и большинство приложений работают через TCP и проходят нормально.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Кто видит мой трафик?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Сервис звонков видит, что вы в звонке. Ваш сервер видит, куда идёт трафик дальше, поэтому он должен принадлежать вам или тому, кому вы доверяете. Код приложений и сервера открыт, его можно проверить.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Можно ли этим пользоваться?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Пользуйтесь olcOS в рамках закона своей страны и правил сервисов, через которые идёт трафик. Проект открыт и не собирает ваши данные на своих серверах: своих серверов у него нет.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="section closing" aria-labelledby="closing-title">
+    <div class="wrap">
+      <img class="app-icon" src="assets/img/icon-512.webp" width="512" height="512" alt="Иконка olcOS: синяя стена и сигнал, который проходит сквозь неё" loading="lazy" data-reveal>
+      <h2 class="h2" id="closing-title" data-reveal style="--d:1"><span class="line">Ваш телефон.</span> <span class="line">Ваш сервер.</span> <span class="line"><em>Ваше подключение.</em></span></h2>
+      <p class="lead" data-reveal style="--d:2">Поставьте приложение, поднимите сервер и подключайтесь. Всё бесплатно и открыто.</p>
+      <div class="cta" data-reveal style="--d:3" data-cta>
+        <a class="btn btn-primary" href="https://github.com/olcOS/olcos/releases/latest" data-platform="ios">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
+          <span class="t">Скачать для iPhone<small>iOS 17+ · файл .ipa</small></span>
+        </a>
+        <a class="btn btn-secondary" href="https://github.com/olcOS/olcos/releases/latest" data-platform="android">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16.5V12a7 7 0 0 1 14 0v4.5z"/><path d="M8 5.5 6.5 3.5M16 5.5l1.5-2"/><circle cx="9.5" cy="11.5" r=".6" fill="currentColor"/><circle cx="14.5" cy="11.5" r=".6" fill="currentColor"/><path d="M7.5 16.5v3M16.5 16.5v3"/></svg>
+          <span class="t">Скачать для Android<small>Android 8+ · файл .apk</small></span>
+        </a>
+      </div>
+      <p class="small" data-reveal style="--d:4">Все версии, исходный код и история изменений — на <a class="link" href="https://github.com/olcOS">GitHub</a>.</p>
     </div>
   </section>
 </main>
 
-<footer>
+<footer class="footer">
   <div class="wrap">
-    <span>olcOS · MIT</span>
-    <span>Используйте в рамках закона и правил сервисов, через которые идёт трафик.</span>
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="./"><img src="assets/favicon-64.png" width="32" height="32" alt=""><span>olcOS</span></a>
+        <p class="foot-about">Свой VPN и прокси через видеозвонки. Приложения для iPhone, iPad и Android и сервер, который ставится одной командой.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Проект</h2>
+        <ul>
+          <li><a href="https://github.com/olcOS">GitHub</a></li>
+          <li><a href="https://github.com/olcOS/olcos/releases">Релизы</a></li>
+          <li><a href="https://github.com/olcOS/olcos-ios">olcOS для iPhone и iPad</a></li>
+          <li><a href="https://github.com/olcOS/olcos-android">olcOS для Android</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Документация</h2>
+        <ul>
+          <li><a href="https://github.com/olcOS/olcos-ios/blob/main/docs/setup.md">Установка и режимы</a></li>
+          <li><a href="https://github.com/olcOS/olcos-ios/blob/main/docs/uri.md">Ссылки и подписки</a></li>
+          <li><a href="https://github.com/olcOS/olcos-ios/blob/main/docs/architecture.md">Архитектура</a></li>
+          <li><a href="https://github.com/olcOS/olcos/blob/main/install.sh">Установщик сервера</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Язык</h2>
+        <ul>
+          <li><a href="./" aria-current="page">Русский</a></li>
+          <li><a href="en/" hreflang="en" lang="en">English</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 olcOS · лицензия MIT · ядро на основе <a href="https://github.com/ghostlane-project/olcrtc">olcrtc</a></span>
+      <span>Пользуйтесь в рамках закона и правил сервисов, через которые идёт трафик.</span>
+    </div>
   </div>
 </footer>
+
+<script src="assets/js/scene.js" defer></script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
