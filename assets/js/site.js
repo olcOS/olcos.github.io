@@ -28,16 +28,50 @@
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  /* ---------- platform-aware CTA ---------- */
-  if (/android/i.test(navigator.userAgent)) {
+  /* ---------- platform-aware CTA: the visitor's phone goes first ---------- */
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isAndroid = !isIOS && /android/i.test(ua);
+  if (isIOS || isAndroid) {
+    var first = isIOS ? 'ios' : 'android';
+    var second = isIOS ? 'android' : 'ios';
     [].forEach.call(document.querySelectorAll('[data-cta]'), function (group) {
-      var a = group.querySelector('[data-platform="android"]');
-      var i = group.querySelector('[data-platform="ios"]');
-      if (!a || !i) return;
-      group.insertBefore(a, i);
+      var a = group.querySelector('[data-platform="' + first + '"]');
+      var b = group.querySelector('[data-platform="' + second + '"]');
+      if (!a || !b) return;
+      group.insertBefore(a, group.firstElementChild);
       a.classList.remove('btn-secondary'); a.classList.add('btn-primary');
-      i.classList.remove('btn-primary'); i.classList.add('btn-secondary');
+      b.classList.remove('btn-primary'); b.classList.add('btn-secondary');
     });
+    [].forEach.call(document.querySelectorAll('[data-plat]'), function (box) {
+      var card = box.querySelector('[data-platform-card="' + first + '"]');
+      if (card) box.insertBefore(card, box.firstElementChild);
+    });
+  }
+
+  /* ---------- download links follow the latest release ---------- */
+  var dlLinks = document.querySelectorAll('[data-dl]');
+  if (dlLinks.length && window.fetch) {
+    fetch('https://api.github.com/repos/olcOS/olcos/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rel) {
+        if (!rel || !rel.assets) return;
+        var pick = { android: /android\.apk$/i, ios: /ios\.ipa$/i };
+        Object.keys(pick).forEach(function (k) {
+          var asset = null;
+          rel.assets.forEach(function (x) { if (!asset && pick[k].test(x.name)) asset = x; });
+          if (!asset || !asset.browser_download_url) return;
+          [].forEach.call(document.querySelectorAll('[data-dl="' + k + '"]'), function (el) {
+            el.setAttribute('href', asset.browser_download_url);
+          });
+          var mb = Math.round(asset.size / 1048576);
+          if (mb > 0) [].forEach.call(document.querySelectorAll('[data-dl-size="' + k + '"]'), function (el) {
+            el.textContent = mb + (EN ? ' MB' : ' МБ');
+          });
+        });
+      })
+      .catch(function () { /* keep the links from the page */ });
   }
 
   /* ---------- hero device: idle -> connected ---------- */

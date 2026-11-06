@@ -11,6 +11,7 @@
 | `fonts/onest-*.woff2` | [Onest](https://fontsource.org/fonts/onest), SIL OFL 1.1. Подмножества cyrillic и latin. В приложении SF Pro, на сайте его заменяет Onest. |
 | `fonts/jbmono-*.woff2` | [JetBrains Mono](https://fontsource.org/fonts/jetbrains-mono), SIL OFL 1.1. |
 | `og-ru.png`, `og-en.png` | Превью для соцсетей 1200×630, собраны из скриншота `whole-server-hero-connected`, иконки и `scene.js`. |
+| `img/qr-ru.svg`, `img/qr-en.svg` | QR-коды со ссылками на https://olcos.github.io/#download и https://olcos.github.io/en/#download (блок «Установка», виден только на компьютере). |
 
 Цифры скорости на главной взяты из документации olcrtc:
 [settings.ru.md](https://github.com/ghostlane-project/olcrtc/blob/0955ba7f2041d1480524292c4af4135a192fe267/docs/settings.ru.md),

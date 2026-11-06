@@ -1,7 +1,7 @@
 {
   "name": "olcOS",
   "short_name": "olcOS",
-  "description": "Свой VPN через видеозвонки для iPhone и Android",
+  "description": "Обход белых списков через видеозвонки. Android и iPhone",
   "start_url": "/",
   "display": "browser",
   "background_color": "#0b0c0f",
