@@ -65,7 +65,7 @@
           [].forEach.call(document.querySelectorAll('[data-dl="' + k + '"]'), function (el) {
             el.setAttribute('href', asset.browser_download_url);
           });
-          var mb = Math.round(asset.size / 1048576);
+          var mb = Math.round(asset.size / 1e6); // decimal MB, as phones show file sizes
           if (mb > 0) [].forEach.call(document.querySelectorAll('[data-dl-size="' + k + '"]'), function (el) {
             el.textContent = mb + (EN ? ' MB' : ' МБ');
           });
